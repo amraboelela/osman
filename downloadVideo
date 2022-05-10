@@ -1,35 +1,33 @@
-title=$1
-episode=$2
-paddedEpisode=`printf %02d $episode`
-url=$3
+#!/bin/bash
+
+episode=$1
+paddedEpisode=`printf %03d $episode`
+url=$2
+targetName=osman-$paddedEpisode
 mkdir -p build
-if [ ! -f build/$title-$paddedEpisode.vtt ]; then
+if [ ! -f build/$targetName.vtt ]; then
     youtube-dl --all-subs --skip-download $url
-    mv *\ $title*\ $episode*.vtt build/$title-$paddedEpisode.vtt
+    mv *\ Osman*\ $episode\.*.vtt build/$targetName.vtt
 fi
-if [ ! -f build/$title-$paddedEpisode.jpg ]; then
+if [ ! -f build/$targetName.jpg ]; then
     youtube-dl --write-thumbnail --skip-download $url
-    mv *\ $title*\ $episode*.jpg build/$title-$paddedEpisode.jpg
+    mv *\ Osman*\ $episode\.*.jpg build/$targetName.jpg
 fi
-if [ ! -f build/ertugrul-$season-$paddedEpisode.m4a ]; then
+if [ ! -f build/$targetName.m4a ]; then
     youtube-dl -f 140 $url
-    if [ $language == "tr" ]; then
-        mv Resurrection\ Ertugrul\ Season\ $season\ Episode\ $episode-*.m4a build/ertugrul-$season-$paddedEpisode-$language.m4a
-    elif [  $language == "ar" ]; then
-        mv *\ $episode*.m4a build/ertugrul-$season-$paddedEpisode-$language.m4a
-    fi
+    mv *\ Osman*\ $episode\.*.m4a build/$targetName.m4a
 fi
-if [ ! -f build/ertugrul-$season-$paddedEpisode-$language.mp4 ]; then
+if [ ! -f build/$targetName.mp4 ]; then
     echo downloadVideo $url
     youtube-dl $url
     
-    if [ -f *\ $episode-*.mkv ]; then
-        handbrakecli -i *\ $episode-*.mkv -o build/ertugrul-$season-$paddedEpisode-$language.mp4
-        rm *\ $episode-*.mkv
-    elif [ -f *\ $episode-*.webm ]; then
-        handbrakecli -i *\ $episode-*.webm -o build/ertugrul-$season-$paddedEpisode-$language.mp4
-        rm *\ $episode-*.webm
+    if [ -f *\ Osman*\ $episode\.*.mkv ]; then
+        handbrakecli -i *\ Osman*\ $episode\.*.mkv -o build/$targetName.mp4
+        rm *\ Osman*\ $episode\.*.mkv
+    elif [ -f *\ Osman*\ $episode\.*.webm ]; then
+        handbrakecli -i *\ Osman*\ $episode\.*.webm -o build/$targetName.mp4
+        rm *\ Osman*\ $episode\.*.webm
     else
-        mv *\ $episode*.mp4 build/ertugrul-$season-$paddedEpisode-$language.mp4
+        mv *\ Osman*\ $episode\.*.mp4 build/targetName.mp4
     fi
 fi
