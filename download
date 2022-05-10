@@ -1,0 +1,4 @@
+echo download $1
+if [ $1 == "osman" ]; then
+    ./downloadVideo $1 90 https://www.youtube.com/watch?v=5fJXATpIiUQ&t=301s
+fi
