@@ -7,7 +7,7 @@ targetName=osman-$paddedEpisode
 mkdir -p build
 if [ ! -f build/$targetName.vtt ]; then
     youtube-dl --all-subs --skip-download $url
-    mv *\ Osman*\ $episode\.*.vtt build/$targetName.vtt
+    mv *\ Osman*\ $episode\.*.vtt build/$targetName-tr.vtt
 fi
 if [ ! -f build/$targetName.jpg ]; then
     youtube-dl --write-thumbnail --skip-download $url
@@ -19,7 +19,8 @@ if [ ! -f build/$targetName.m4a ]; then
 fi
 if [ ! -f build/$targetName.mp4 ]; then
     echo downloadVideo $url
-    youtube-dl $url
+    youtube-dl --rm-cache-dir
+    youtube-dl -v $url
     
     if [ -f *\ Osman*\ $episode\.*.mkv ]; then
         handbrakecli -i *\ Osman*\ $episode\.*.mkv -o build/$targetName.mp4
@@ -28,6 +29,6 @@ if [ ! -f build/$targetName.mp4 ]; then
         handbrakecli -i *\ Osman*\ $episode\.*.webm -o build/$targetName.mp4
         rm *\ Osman*\ $episode\.*.webm
     else
-        mv *\ Osman*\ $episode\.*.mp4 build/targetName.mp4
+        mv *\ Osman*\ $episode\.*.mp4 build/$targetName.mp4
     fi
 fi

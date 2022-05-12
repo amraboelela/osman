@@ -14,7 +14,7 @@ key = "<PUT THE KEY FROM YOUR GOOGLE TRANSLATE API ACCOUNT>"
 % brew install pyenv
 % pyenv install 2.7.18
 % pyenv global 2.7.18
-% $(pyenv init --path)
+% pyenv init --path
 copy the output
 % vi ~/.zshrc
 paste then save
@@ -22,7 +22,6 @@ paste then save
 % sudo easy_install -U requests
 % sudo -H pip3 install requests
 % sudo -H pip3 install gTTS
-% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 % brew install ffmpeg
 % brew install handbrake
 ```
@@ -32,5 +31,5 @@ paste then save
 - To build episode 90 till episode 93 and translate from Turkish to English:
 
 ```
-$ ./build.sh 90 93
+$ ./build.sh 90 93 tr en
 ```

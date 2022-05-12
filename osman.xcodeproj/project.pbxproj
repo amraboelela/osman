@@ -13,6 +13,10 @@
 		F556ED59282AFF250062522A /* build.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = build.py; sourceTree = "<group>"; };
 		F556ED5A282B050E0062522A /* download */ = {isa = PBXFileReference; lastKnownFileType = text; path = download; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		F556ED5B282B05A20062522A /* downloadVideo */ = {isa = PBXFileReference; lastKnownFileType = text; path = downloadVideo; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
+		F5C18E88282CC78F000D55B7 /* buildEpisode */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildEpisode; sourceTree = "<group>"; };
+		F5C18E89282CCA34000D55B7 /* subtitles.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = subtitles.py; sourceTree = "<group>"; };
+		F5C18E8A282CCA34000D55B7 /* translate.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = translate.py; sourceTree = "<group>"; };
+		F5C18E8B282CD22F000D55B7 /* subtitles */ = {isa = PBXFileReference; lastKnownFileType = text; path = subtitles; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -21,10 +25,14 @@
 			children = (
 				F556ED58282AFEDC0062522A /* build.sh */,
 				F556ED59282AFF250062522A /* build.py */,
+				F5C18E88282CC78F000D55B7 /* buildEpisode */,
 				F556ED5A282B050E0062522A /* download */,
 				F556ED5B282B05A20062522A /* downloadVideo */,
 				F556ED57282ADDC70062522A /* LICENSE */,
 				F556ED56282ADDBB0062522A /* README.md */,
+				F5C18E8B282CD22F000D55B7 /* subtitles */,
+				F5C18E89282CCA34000D55B7 /* subtitles.py */,
+				F5C18E8A282CCA34000D55B7 /* translate.py */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+prefix=$1
+sourceLanguage=$2
+targetLanguage=$3
+
+echo build/$prefix-$targetLanguage.vtt
+if [ ! -f build/$prefix-$targetLanguage.srt ] || [ ! -s build/$prefix-$targetLanguage.srt ]; then
+    echo "Translating $prefix-$sourceLanguage.vtt"
+    python translate.py build/$prefix-$sourceLanguage.vtt $targetLanguage > build/$prefix-$targetLanguage.vtt
+    ffmpeg -i build/$prefix-$targetLanguage.vtt build/$prefix-$targetLanguage.srt
+fi
+python3 subtitles.py $prefix $targetLanguage "c"
