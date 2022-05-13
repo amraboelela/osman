@@ -13,22 +13,22 @@ if [ ! -f build/$targetName.jpg ]; then
     youtube-dl --write-thumbnail --skip-download $url
     mv *\ Osman*\ $episode\.*.jpg build/$targetName.jpg
 fi
-if [ ! -f build/$targetName.m4a ]; then
-    youtube-dl -f 140 $url
-    mv *\ Osman*\ $episode\.*.m4a build/$targetName.m4a
-fi
+#if [ ! -f build/$targetName.m4a ]; then
+#    youtube-dl -f 140 $url
+#    mv *\ Osman*\ $episode\.*.m4a build/$targetName.m4a
+#fi
 if [ ! -f build/$targetName.mp4 ]; then
     echo downloadVideo $url
     youtube-dl --rm-cache-dir
     youtube-dl -v $url
     
-    if [ -f *\ Osman*\ $episode\.*.mkv ]; then
-        handbrakecli -i *\ Osman*\ $episode\.*.mkv -o build/$targetName.mp4
-        rm *\ Osman*\ $episode\.*.mkv
-    elif [ -f *\ Osman*\ $episode\.*.webm ]; then
-        handbrakecli -i *\ Osman*\ $episode\.*.webm -o build/$targetName.mp4
-        rm *\ Osman*\ $episode\.*.webm
-    else
-        mv *\ Osman*\ $episode\.*.mp4 build/$targetName.mp4
+    if [ -f *\ Osman*\ $episode\.*.mp4 ]; then
+        youtube-dl --rm-cache-dir
+        youtube-dl -v $url
+        if [ -f *\ Osman*\ $episode\.*.mp4 ]; then
+            youtube-dl --rm-cache-dir
+            youtube-dl -v $url
+        fi
     fi
+    mv *\ Osman*\ $episode\.*.mp4 build/$targetName.mp4
 fi

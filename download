@@ -2,7 +2,8 @@
 
 echo download $1
 if [ $1 == "osman" ]; then
-    #./downloadVideo 89 https://www.youtube.com/watch?v=uPk856o66UM
     ./downloadVideo 90 https://www.youtube.com/watch?v=U-IsJHh9qik
     ./downloadVideo 91 https://www.youtube.com/watch?v=b7SZfclpHk4
+    ./downloadVideo 92 https://www.youtube.com/watch?v=GGY2mPQwN7c
+    ./downloadVideo 93 https://www.youtube.com/watch?v=0hJ8s5flRFo
 fi

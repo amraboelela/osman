@@ -23,7 +23,7 @@ for line in lines:
             PARAMS = {'key':key, 'q':paragraph, 'source':sourceLanguage, 'target':targetLanguage}
             r = requests.get(url = URL, params = PARAMS)
             data = r.json()
-            translatedText = data['data']['translations'][0]['translatedText'].replace('-','').replace("&#39;","'").replace("&quot;","'").replace("'il","'ll")
+            translatedText = data['data']['translations'][0]['translatedText'].replace('-','').replace("&#39;","'").replace("&quot;","'").replace("'il","'ll").replace(" gas "," conquest ").replace("Come on God","Allah is Ever-Living").replace("Sorry.","Sir.")
             try:
                 print(translatedText.encode('utf8'))
                 print

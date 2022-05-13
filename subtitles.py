@@ -15,7 +15,7 @@ print("## subtitles, prefix: " + prefix + ", targetLanguage: " + targetLanguage 
 
 sourceFilePath = "build/" + prefix + "-tr.vtt"
 targetFilePath = "build/" + prefix + "-" + targetLanguage + ".vtt"
-subtitlesPath = "build/" + prefix + ".srt"
+subtitlesPath = "resources/" + prefix + ".srt"
 
 sourceFile = open(sourceFilePath)
 sourceLines = sourceFile.read().splitlines()
@@ -36,4 +36,4 @@ def timeString(timeFloat):
 #quit()
 sbtFile = "build/" + prefix + "-sbt-" + postfix + ".mp4"
 if not path.exists(sbtFile):
-    os.system("handbrakecli -i build/" + prefix + "-" + postfix +".mp4 -o " + sbtFile + " --srt-file build/" + prefix + ".srt --srt-codeset UTF-8 --srt-burn")
+    os.system("handbrakecli -i build/" + prefix + "-" + postfix +".mp4 -o " + sbtFile + " --srt-file resources/" + prefix + ".srt --srt-codeset UTF-8 --srt-burn")

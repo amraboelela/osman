@@ -151,6 +151,5 @@ audioFiles.txt
 *.vtt
 *.jpg
 *.mp3
-*.srt
 durations.txt
 *.part
