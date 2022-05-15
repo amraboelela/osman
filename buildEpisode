@@ -4,10 +4,18 @@ prefix=$1
 sourceLanguage=$2
 targetLanguage=$3
 
-echo build/$prefix-$targetLanguage.vtt
-if [ ! -f resources/$prefix-$targetLanguage.srt ] || [ ! -s resources/$prefix-$targetLanguage.srt ]; then
-    echo "Translating $prefix-$sourceLanguage.vtt"
-    python translate.py build/$prefix-$sourceLanguage.vtt $targetLanguage > build/$prefix-$targetLanguage.vtt
-    ffmpeg -i build/$prefix-$targetLanguage.vtt resources/$prefix-$targetLanguage.srt
+echo resources/$prefix-$targetLanguage.srt
+if [ ! -s resources/$prefix-$targetLanguage.srt ]; then
+    rm resources/$prefix-$targetLanguage.srt
 fi
-python3 subtitles.py $prefix $targetLanguage "c"
+if [ ! -f resources/$prefix-$targetLanguage.srt ]; then
+    if [ ! -s build/$prefix-$targetLanguage.vtt ]; then
+        rm build/$prefix-$targetLanguage.vtt
+    fi
+    if [ ! -f build/$prefix-$targetLanguage.vtt ]; then
+        echo Translating $prefix-$sourceLanguage.vtt to $targetLanguage
+        python translate.py build/$prefix-$sourceLanguage.vtt $targetLanguage > build/$prefix-$targetLanguage.vtt
+    fi
+    python vtt2srt.py build/$prefix-$targetLanguage.vtt resources/$prefix-$targetLanguage.srt
+fi
+python3 subtitles.py $prefix $targetLanguage

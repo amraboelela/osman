@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		F527884128307D5200585006 /* vtt2srt.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = vtt2srt.py; sourceTree = "<group>"; };
 		F556ED56282ADDBB0062522A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F556ED57282ADDC70062522A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F556ED58282AFEDC0062522A /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
@@ -17,6 +18,7 @@
 		F5C18E89282CCA34000D55B7 /* subtitles.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = subtitles.py; sourceTree = "<group>"; };
 		F5C18E8A282CCA34000D55B7 /* translate.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = translate.py; sourceTree = "<group>"; };
 		F5C18E8B282CD22F000D55B7 /* subtitles */ = {isa = PBXFileReference; lastKnownFileType = text; path = subtitles; sourceTree = "<group>"; };
+		F5C18E8C282EE1DC000D55B7 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -30,9 +32,11 @@
 				F556ED5B282B05A20062522A /* downloadVideo */,
 				F556ED57282ADDC70062522A /* LICENSE */,
 				F556ED56282ADDBB0062522A /* README.md */,
+				F5C18E8C282EE1DC000D55B7 /* resources */,
 				F5C18E8B282CD22F000D55B7 /* subtitles */,
 				F5C18E89282CCA34000D55B7 /* subtitles.py */,
 				F5C18E8A282CCA34000D55B7 /* translate.py */,
+				F527884128307D5200585006 /* vtt2srt.py */,
 			);
 			sourceTree = "<group>";
 		};

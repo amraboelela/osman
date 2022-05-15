@@ -7,7 +7,7 @@ if len(sys.argv) > 2:
 else:
     print("please provide the file name and the target language")
     exit(-1)
-
+    
 # api-endpoint
 URL = "https://translation.googleapis.com/language/translate/v2"
 from translation_key import *
@@ -23,7 +23,7 @@ for line in lines:
             PARAMS = {'key':key, 'q':paragraph, 'source':sourceLanguage, 'target':targetLanguage}
             r = requests.get(url = URL, params = PARAMS)
             data = r.json()
-            translatedText = data['data']['translations'][0]['translatedText'].replace('-','').replace("&#39;","'").replace("&quot;","'").replace("'il","'ll").replace(" gas "," conquest ").replace("Come on God","Allah is Ever-Living").replace("Sorry.","Sir.")
+            translatedText = data['data']['translations'][0]['translatedText'].replace('-','').replace("&#39;","'").replace("&quot;","'").replace("'il","'ll").replace(" gas "," conquest ").replace("Come on God","Allah is Ever-Living").replace("Sorry.","Sir.").capitalize()
             try:
                 print(translatedText.encode('utf8'))
                 print

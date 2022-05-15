@@ -5,7 +5,7 @@ paddedEpisode=`printf %03d $episode`
 url=$2
 targetName=osman-$paddedEpisode
 mkdir -p build
-if [ ! -f build/$targetName.vtt ]; then
+if [ ! -f build/$targetName-tr.vtt ]; then
     youtube-dl --all-subs --skip-download $url
     mv *\ Osman*\ $episode\.*.vtt build/$targetName-tr.vtt
 fi
