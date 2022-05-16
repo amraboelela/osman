@@ -18,4 +18,6 @@ if [ ! -f resources/$prefix-$targetLanguage.srt ]; then
     fi
     python vtt2srt.py build/$prefix-$targetLanguage.vtt resources/$prefix-$targetLanguage.srt
 fi
-python3 subtitles.py $prefix $targetLanguage
+if [ -s resources/$prefix-$targetLanguage.srt ]; then
+    python3 subtitles.py $prefix $targetLanguage
+fi

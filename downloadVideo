@@ -9,10 +9,10 @@ if [ ! -f build/$targetName-tr.vtt ]; then
     youtube-dl --all-subs --skip-download $url
     mv *\ Osman*\ $episode\.*.vtt build/$targetName-tr.vtt
 fi
-if [ ! -f build/$targetName.jpg ]; then
-    youtube-dl --write-thumbnail --skip-download $url
-    mv *\ Osman*\ $episode\.*.jpg build/$targetName.jpg
-fi
+#if [ ! -f build/$targetName.jpg ]; then
+#    youtube-dl --write-thumbnail --skip-download $url
+#    mv *\ Osman*\ $episode\.*.jpg build/$targetName.jpg
+#fi
 #if [ ! -f build/$targetName.m4a ]; then
 #    youtube-dl -f 140 $url
 #    mv *\ Osman*\ $episode\.*.m4a build/$targetName.m4a
